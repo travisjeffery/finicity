@@ -1,7 +1,7 @@
 defmodule Finicity do
   use HTTPotion.Base
 
-  def partner_authentication([partner_id: partner_id, partner_secret: partner_secret: partner_secret]) do
+  def partner_authentication([partner_id: partner_id, partner_secret: partner_secret]) do
     data = {:credentials, nil, [
                {:partnerId, nil, partner_id},
                {:partnerSecret, nil, partner_secret}]}
