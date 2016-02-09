@@ -4,6 +4,8 @@ defmodule Finicity.Mixfile do
   def project do
     [app: :finicity,
      version: "0.0.1",
+     description: "Client library for Finicity.",
+     maintainers: ["Travis Jeffery"],
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
