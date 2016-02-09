@@ -1,6 +1,6 @@
 # Finicity
 
-**TODO: Add description**
+Finicity client for Elixir.
 
 ## Installation
 
