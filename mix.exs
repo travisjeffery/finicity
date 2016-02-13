@@ -3,7 +3,7 @@ defmodule Finicity.Mixfile do
 
   def project do
     [app: :finicity,
-     version: "0.0.3",
+     version: "0.0.4",
      description: "Client library for Finicity.",
      maintainers: ["Travis Jeffery"],
      elixir: "~> 1.2",
