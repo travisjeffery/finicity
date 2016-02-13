@@ -6,7 +6,7 @@ defmodule Finicity do
                {:partnerId, nil, partner_id},
                {:partnerSecret, nil, partner_secret}]}
     |> XmlBuilder.generate
-    %{status_code: 200, body: body} = post("/v2/partners/authentication", [body: data])
+    %{status_code: 200, body: body} = post("/v2/partners/authentication", [body: data, timeout: 20000])
     body |> Floki.Finder.find("token") |> Floki.FlatText.get
   end
 
@@ -34,14 +34,14 @@ defmodule Finicity do
   end
 
   defp app_key do
-    System.get_env("FINICITY_APP_KEY")
+    Application.get_env(:finicity, :app_key) || System.get_env("FINICITY_APP_KEY")
   end
 
   defp partner_id do
-    System.get_env("FINICITY_PARTNER_ID")
+    Application.get_env(:finicity, :partner_id) || System.get_env("FINICITY_PARTNER_ID")
   end
 
   defp partner_secret do
-    System.get_env("FINICITY_PARTNER_SECRET")
+    Application.get_env(:finicity, :partner_secret) || System.get_env("FINICITY_PARTNER_SECRET")
   end
 end
