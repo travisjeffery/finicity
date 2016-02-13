@@ -34,14 +34,14 @@ defmodule Finicity do
   end
 
   defp app_key do
-    Application.get_env(:finicity, :app_key) || System.get_env("FINICITY_APP_KEY")
+    System.get_env("FINICITY_APP_KEY") || Application.get_env(:finicity, :app_key)
   end
 
   defp partner_id do
-    Application.get_env(:finicity, :partner_id) || System.get_env("FINICITY_PARTNER_ID")
+    System.get_env("FINICITY_PARTNER_ID") || Application.get_env(:finicity, :partner_id)
   end
 
   defp partner_secret do
-    Application.get_env(:finicity, :partner_secret) || System.get_env("FINICITY_PARTNER_SECRET")
+    System.get_env("FINICITY_PARTNER_SECRET") || Application.get_env(:finicity, :partner_secret)
   end
 end
